@@ -3,10 +3,12 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class Instagram < OmniAuth::Strategies::OAuth2
+      option :name, 'instagram'
+
       option :client_options, {
         :site => 'https://api.instagram.com',
-        :authorize_url => 'https://api.instagram.com/oauth/authorize',
-        :token_url => 'https://api.instagram.com/oauth/access_token'
+        :authorize_url => '/oauth/authorize',
+        :token_url => '/oauth/access_token'
       }
 
       def request_phase
